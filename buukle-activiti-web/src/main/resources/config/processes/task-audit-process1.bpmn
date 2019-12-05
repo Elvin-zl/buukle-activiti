@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.activiti.org/test" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.w3.org/1999/XPath" id="m1575569703991" name="" targetNamespace="http://www.activiti.org/test" typeLanguage="http://www.w3.org/2001/XMLSchema">
+  <process id="start" isClosed="false" isExecutable="true" processType="None">
+    <startEvent id="_2" name="start"/>
+    <userTask activiti:exclusive="true" id="_3" name="submit"/>
+    <endEvent id="_4" name="EndEvent"/>
+    <sequenceFlow id="_5" sourceRef="_2" targetRef="_3"/>
+    <userTask activiti:exclusive="true" id="_6" name="approve_1"/>
+    <exclusiveGateway gatewayDirection="Unspecified" id="_8" name="result"/>
+    <sequenceFlow id="_9" sourceRef="_3" targetRef="_8"/>
+    <sequenceFlow id="_10" name="n" sourceRef="_8" targetRef="_4"/>
+    <sequenceFlow id="_7" name="y" sourceRef="_8" targetRef="_6"/>
+    <sequenceFlow id="_14" sourceRef="_6" targetRef="_4"/>
+  </process>
+</definitions>
