@@ -8,6 +8,8 @@
         <module>buukle-activiti-service</module>
         <module>buukle-activiti-plugin</module>
         <module>buukle-activiti-web</module>
+        <module>buukle-activiti-controller</module>
+        <module>buukle-activiti-api</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
     <version>1.0-SNAPSHOT</version>

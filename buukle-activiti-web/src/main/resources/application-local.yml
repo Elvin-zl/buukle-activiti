@@ -21,6 +21,8 @@ spring:
     check-process-definitions: true #自动检查、部署流程定义文件
     database-schema-update: true #自动更新数据库结构
     history-level: full
+    server:
+     name: buukle-activiti
   ##thymeleaf
   thymeleaf:
     cache: false

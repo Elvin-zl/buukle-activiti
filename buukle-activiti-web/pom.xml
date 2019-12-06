@@ -15,9 +15,20 @@
 
     <dependencies>
         <dependency>
-            <artifactId>buukle-activiti-service</artifactId>
+            <artifactId>buukle-activiti-controller</artifactId>
             <groupId>top.buukle</groupId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <artifactId>buukle-activiti-api</artifactId>
+            <groupId>top.buukle</groupId>
+            <version>1.0-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>buukle-activiti-service</artifactId>
+                    <groupId>top.buukle</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
