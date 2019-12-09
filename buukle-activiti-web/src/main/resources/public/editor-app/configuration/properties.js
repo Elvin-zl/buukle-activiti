@@ -26,7 +26,7 @@ KISBPM.PROPERTY_CONFIG =
         "writeModeTemplateUrl": "editor-app/configuration/properties/string-property-write-mode-template.html"
     },
     "boolean": {
-        "templateUrl": "properties/boolean-property-template.html"
+        "templateUrl": "/editor-app/configuration/properties/boolean-property-template.html"
     },
     "text" : {
         "readModeTemplateUrl": "editor-app/configuration/properties/default-value-display-template.html",

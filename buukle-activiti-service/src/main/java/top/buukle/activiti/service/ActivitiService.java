@@ -12,6 +12,7 @@ package top.buukle.activiti.service;
 
 import top.buukle.common.call.CommonRequest;
 import top.buukle.common.call.CommonResponse;
+import top.buukle.common.call.PageResponse;
 
 /**
  * @description 〈流程service〉
@@ -51,7 +52,7 @@ public interface ActivitiService {
 
     CommonResponse deployList(CommonRequest request);
 
-    CommonResponse getProcessList(CommonRequest request);
+    PageResponse getProcessList(CommonRequest request);
 
     CommonResponse suspendProcess(CommonRequest request);
 

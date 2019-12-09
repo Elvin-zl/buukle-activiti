@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Tijs Rademakers
  */
 @RestController
-public class StencilsetRestResource {
+public class StencilsetRestController {
   
   @RequestMapping(value="/editor/stencilset", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
   public @ResponseBody String getStencilset() {

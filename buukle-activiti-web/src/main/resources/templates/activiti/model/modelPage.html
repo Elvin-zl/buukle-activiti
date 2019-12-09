@@ -1,0 +1,36 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<table class="layui-table" lay-even lay-skin="nob">
+	<thead>
+	<tr>
+		<th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose"></th>
+		<th class="hidden-xs">modelName</th>
+		<th class="hidden-xs">modelKey</th>
+		<th class="hidden-xs">createTime</th>
+		<th class="hidden-xs">lastUpdateTime</th>
+		<th>操作</th>
+	</tr>
+	</thead>
+	<tbody id="tbody-application">
+		<tr th:each="modelRecord:${response?.body?.list}">
+			<td><input type="checkbox" name="batchCheckBox" lay-skin="primary" th:attr="data-id = ${modelRecord?.id}"  /></td>
+			<td th:text="${modelRecord?.name}" class="hidden-xs"></td>
+			<td th:text="${modelRecord?.key}" class="hidden-xs"></td>
+			<td th:text="${#dates.format(modelRecord?.createTime,'yyyy-MM-dd HH:mm:ss')}" class="hidden-xs"></td>
+			<td th:text="${#dates.format(modelRecord?.lastUpdateTime,'yyyy-MM-dd HH:mm:ss')}" class="hidden-xs"></td>
+			<td>
+				<div class="layui-inline">
+					<hp url="/security/application/applicationCrudView">
+						<div class="layui-btn layui-btn-sm layui-btn-normal editBtn" th:attr="data-id = ${modelRecord?.id}" data-url="/security/application/applicationCrudView"><i class="layui-icon">&#xe642;</i></div>
+					</hp>
+					<hp url="/security/application/applicationCrudJson">
+						<div class="layui-btn layui-btn-sm layui-btn-danger delOneBtn" th:attr="data-id = ${modelRecord?.id}" data-url="/security/application/applicationCrudJson"><i class="layui-icon">&#xe640;</i></div>
+					</hp>
+				</div>
+			</td>
+		</tr>
+	</tbody>
+	<input type="hidden" id="page" th:attr="value=${response?.body.pageNo}" />
+	<input type="hidden" id="totalPage" th:attr="value=${response?.body.totalPage}" />
+	<input type="hidden" id="total" th:attr="value=${response?.body.total}" />
+</table>
+

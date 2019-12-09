@@ -10,13 +10,14 @@
  */
 package top.buukle.activiti.service.impl;
 
-import org.activiti.bpmn.model.BpmnModel;
-import org.activiti.engine.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import top.buukle.activiti.entity.vo.ModelQuery;
 import top.buukle.activiti.service.ActivitiService;
+import top.buukle.activiti.service.ModelService;
 import top.buukle.common.call.CommonRequest;
 import top.buukle.common.call.CommonResponse;
+import top.buukle.common.call.PageResponse;
 
 import java.io.IOException;
 
@@ -30,22 +31,8 @@ import java.io.IOException;
 public class ActivitiServiceImpl implements ActivitiService {
 
     @Autowired
-    private RepositoryService repositoryService;
+    private ModelService modelService;
 
-    @Autowired
-    private RuntimeService runtimeService;
-
-    @Autowired
-    private TaskService taskService;
-
-    @Autowired
-    private FormService formService;
-
-    @Autowired
-    private HistoryService historyService;
-
-    @Autowired
-    private IdentityService identityService;
 
     /**
      * @description 启动流程
@@ -209,8 +196,8 @@ public class ActivitiServiceImpl implements ActivitiService {
      * @throws Exception
      */
     @Override
-    public CommonResponse getProcessList(CommonRequest request) {
-        return null;
+    public PageResponse getProcessList(CommonRequest request) {
+        return modelService.getPage((ModelQuery) request.getBody());
     }
 
     /**

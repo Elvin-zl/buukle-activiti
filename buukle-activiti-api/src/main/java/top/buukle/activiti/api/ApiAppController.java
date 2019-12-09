@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import top.buukle.activiti.service.ActivitiService;
 import top.buukle.common.call.CommonRequest;
 import top.buukle.common.call.CommonResponse;
+import top.buukle.common.call.PageResponse;
 
 import java.io.IOException;
 
@@ -196,7 +197,7 @@ public class ApiAppController {
      * @throws Exception
      */
     @RequestMapping(value = "/getProcessList")
-    CommonResponse getProcessList( CommonRequest request) throws Exception{
+    PageResponse getProcessList( CommonRequest request) throws Exception{
         return activitiService.getProcessList(request);
     }
 
