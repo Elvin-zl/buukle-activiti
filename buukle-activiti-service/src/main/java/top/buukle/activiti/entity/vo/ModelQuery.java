@@ -40,7 +40,7 @@ public class ModelQuery implements BaseQuery {
     }
 
     public Integer getPageSize() {
-        return null == pageSize ? 1000 : pageSize;
+        return null == pageSize ? 10 : pageSize;
     }
 
     public void setPageSize(Integer pageSize) {
