@@ -3,6 +3,7 @@ package top.buukle.activiti.web;
 import org.activiti.spring.boot.SecurityAutoConfiguration;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.ApplicationContext;
@@ -10,7 +11,10 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @MapperScan({"top.buukle.activiti.dao","top.buukle.common.mvc"})
-@SpringBootApplication(scanBasePackages={"top.buukle.*"},exclude = SecurityAutoConfiguration.class)
+@SpringBootApplication(scanBasePackages={"top.buukle.*"},exclude = {
+        org.activiti.spring.boot.SecurityAutoConfiguration.class,
+        org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class
+})
 @EnableFeignClients(basePackages = {"top.buukle.*"})
 @EnableRedisHttpSession
 @EnableTransactionManagement
