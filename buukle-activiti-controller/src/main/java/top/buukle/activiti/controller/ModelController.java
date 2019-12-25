@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import top.buukle.activiti.entity.vo.ModelQuery;
 import top.buukle.activiti.service.ModelService;
+import top.buukle.common.call.FuzzyResponse;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -47,16 +48,18 @@ public class ModelController {
 
 
     /**
-     * 获取列表
-     * @return
-     * @throws Exception
+     * @description 二级页面
+     * @param modelAndView
+     * @return org.springframework.web.servlet.ModelAndView
+     * @Author elvin
+     * @Date 2019/12/25
      */
-    @RequestMapping("/{pageName}")
-    public ModelAndView getPage(@PathVariable("pageName") String pageName, ModelQuery query, ModelAndView modelAndView) {
-        modelAndView.addObject("response", modelService.getPage(query));
-        modelAndView.setViewName("model/" + pageName);
+    @RequestMapping("/modelHome")
+    public ModelAndView modelHome(ModelAndView modelAndView) {
+        modelAndView.setViewName("model/modelHome");
         return modelAndView;
     }
+
     /**
      * @description 创建流程
      * @param request
